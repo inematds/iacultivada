@@ -1,5 +1,7 @@
 # 🌱 IA Cultivada — não se programa, se cultiva
 
+🇧🇷 Português · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)
+
 [![IA Cultivada](assets/banner.jpg)](https://inematds.github.io/iacultivada/)
 
 Os modelos de IA são **cultivados, não construídos**: os laboratórios criam as condições (arquitetura, dados, objetivo, compute, treinamento, feedback) e as capacidades emergem. Este projeto pega essa ideia e mostra **como aplicá-la** em três jardins: a vida pessoal, o seu Jarvis (assistente pessoal agêntico) e os negócios.
@@ -23,6 +25,14 @@ Os modelos de IA são **cultivados, não construídos**: os laboratórios criam 
 | `pacotes/` | Pacotes de agentes por área: qualificador de leads (completo, com prompt de sistema e fluxo n8n) e três leves. Modelos, não executados contra CRM ou n8n reais. |
 | `capa/capa.png` | Capa oficial do catálogo INEMA. |
 | `assets/` | Banner e imagem hero. |
+
+## Idiomas
+
+| | Página |
+|---|---|
+| Português | https://inematds.github.io/iacultivada/ |
+| English | https://inematds.github.io/iacultivada/en/ |
+| Español | https://inematds.github.io/iacultivada/es/ |
 
 ## Soluções prontas
 

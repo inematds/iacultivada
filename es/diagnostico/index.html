@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diagnóstico de cultivo — IA Cultivada</title>
-<meta name="description" content="Oito perguntas, uma por elemento do cultivo, que dão sua nota de maturidade e dizem por onde começar, com o kit certo para baixar.">
+<meta name="description" content="Ocho preguntas, una por elemento del cultivo, que dan tu nota de madurez y dicen por dónde empezar, con el kit correcto para descargar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -144,32 +144,32 @@
     <span class="sep">-</span>
     <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
   </span>
-  <span class="sep">|</span><span class="langs"><b>PT</b> · <a class="sec" href="../en/diagnostico/">EN</a> · <a class="sec" href="../es/diagnostico/">ES</a></span>
+  <span class="sep">|</span><span class="langs"><a class="sec" href="../../diagnostico/">PT</a> · <a class="sec" href="../../en/diagnostico/">EN</a> · <b>ES</b></span>
   <div class="links">
-    <a class="sec" href="../#conceito">Conceito</a>
-    <a class="sec" href="../#solucoes">Soluções</a>
-    <a class="sec" href="../gerador/">Gerador</a>
+    <a class="sec" href="../#conceito">Concepto</a>
+    <a class="sec" href="../#solucoes">Soluciones</a>
+    <a class="sec" href="../gerador/">Generador</a>
     <a class="sec" href="../diagnostico/">Diagnóstico</a>
     <a class="sec" href="../kits/">Kits</a>
-    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <button class="tgl" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
     <a class="btn" href="https://github.com/inematds/iacultivada" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 <section id="top"><div class="wrap">
-  <span class="chip">Diagnóstico · 2 minutos · nada sai do seu navegador</span>
-  <h2>Quão cultivada é a sua IA?</h2>
-  <p class="sub">Oito perguntas, uma por elemento. No fim: sua nota, o estágio do jardim, por qual elemento começar e o kit certo para baixar.</p>
+  <span class="chip">Diagnóstico · 2 minutos · nada sale de tu navegador</span>
+  <h2>¿Qué tan cultivada está tu IA?</h2>
+  <p class="sub">Ocho preguntas, una por elemento. Al final: tu nota, la etapa del jardín, por qué elemento empezar y el kit correcto para descargar.</p>
   <div class="grid g2" style="align-items:start">
     <form id="f" onsubmit="return false">
-      <label>Qual é o seu jardim?<select name="jardim"><option value="pessoal">Pessoal (IA de chat)</option><option value="jarvis">Jarvis (agente com ferramentas)</option><option value="empresa">Empresa (agente num processo)</option></select></label>
+      <label>¿Cuál es tu jardín?<select name="jardim"><option value="pessoal">Personal (IA de chat)</option><option value="jarvis">Jarvis (agente con herramientas)</option><option value="empresa">Empresa (agente en un proceso)</option></select></label>
       <div id="qs"></div>
-      <p style="margin-top:22px"><button class="btn" id="go">Ver meu resultado</button></p>
+      <p style="margin-top:22px"><button class="btn" id="go">Ver mi resultado</button></p>
     </form>
     <div class="res" id="res"></div>
   </div>
 </div></section>
 <footer><div class="wrap">
-  <div class="pill">Kits</div><div class="pill">Gerador</div><div class="pill">Diagnóstico</div><div class="pill">Pacotes</div><div class="pill">Skills</div>
+  <div class="pill">Kits</div><div class="pill">Generador</div><div class="pill">Diagnóstico</div><div class="pill">Paquetes</div><div class="pill">Skills</div>
   <p style="margin-top:18px">IA Cultivada · <a href="../">página principal</a> · <a href="https://github.com/inematds/iacultivada">inematds/iacultivada</a> · <a href="https://inema.club">INEMA.CLUB</a></p>
 </div></footer>
 <script>
@@ -193,11 +193,11 @@
     var r={}; Diagnostico.ELEMENTOS.forEach(function(e){ var c=f.querySelector('input[name='+e.id+']:checked'); r[e.id]=c?Number(c.value):0; });
     var p=Diagnostico.pontuar(r, f.elements.jardim.value);
     res.style.display='block';
-    res.innerHTML='<div class="kpi"><b>'+p.pct+'% · '+p.estagio+'</b><span>'+p.total+' de '+p.max+' pontos</span></div>'
-      +'<div class="card" style="margin-top:14px"><h3>Leitura</h3><p>'+p.leitura+'</p></div>'
-      +'<div class="card"><h3>Comece por: '+p.comecarPor.nome+'</h3><p>Arquivo a preencher: <code>'+p.comecarPor.arquivo+'</code></p><p style="margin-top:10px"><a class="btn sm" href="'+p.kit.url+'">Baixar o '+p.kit.nome+'</a> <a class="btn ghost sm" href="../gerador/">Ou gerar a ficha agora</a></p></div>'
+    res.innerHTML='<div class="kpi"><b>'+p.pct+'% · '+p.estagio+'</b><span>'+p.total+' de '+p.max+' puntos</span></div>'
+      +'<div class="card" style="margin-top:14px"><h3>Lectura</h3><p>'+p.leitura+'</p></div>'
+      +'<div class="card"><h3>Empieza por: '+p.comecarPor.nome+'</h3><p>Archivo a completar: <code>'+p.comecarPor.arquivo+'</code></p><p style="margin-top:10px"><a class="btn sm" href="'+p.kit.url+'">Descargar el '+p.kit.nome+'</a> <a class="btn ghost sm" href="../gerador/">O generar la ficha ahora</a></p></div>'
       +'<div class="card"><h3>Por elemento</h3>'+p.porElemento.map(function(e){return '<div style="margin:8px 0"><div style="display:flex;justify-content:space-between;font-size:.88rem"><span>'+e.nome+'</span><span class="mut">'+e.valor+'/3</span></div><div class="barra"><i style="width:'+(e.valor/3*100)+'%"></i></div></div>';}).join('')+'</div>'
-      +'<div class="card"><h3>Próximos 30 dias</h3><p>Semana 1: preencha o arquivo do elemento mais fraco. Semana 2: use todo dia e anote as falhas. Semana 3: primeira revisão semanal. Semana 4: refaça este diagnóstico e compare.</p></div>';
+      +'<div class="card"><h3>Próximos 30 días</h3><p>Semana 1: completa el archivo del elemento más débil. Semana 2: úsala todos los días y anota los fallos. Semana 3: primera revisión semanal. Semana 4: repite este diagnóstico y compara.</p></div>';
     res.scrollIntoView({behavior:'smooth'});
   });
 })();

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diagnóstico de cultivo — IA Cultivada</title>
-<meta name="description" content="Oito perguntas, uma por elemento do cultivo, que dão sua nota de maturidade e dizem por onde começar, com o kit certo para baixar.">
+<title>Generador de ficha del agente — IA Cultivada</title>
+<meta name="description" content="Completa seis campos y descarga la ficha del agente, el contexto, los ejemplos, el scorecard y el diario de fallos, en el mismo formato de los kits de IA Cultivada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -144,32 +144,48 @@
     <span class="sep">-</span>
     <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
   </span>
-  <span class="sep">|</span><span class="langs"><b>PT</b> · <a class="sec" href="../en/diagnostico/">EN</a> · <a class="sec" href="../es/diagnostico/">ES</a></span>
+  <span class="sep">|</span><span class="langs"><a class="sec" href="../../gerador/">PT</a> · <a class="sec" href="../../en/gerador/">EN</a> · <b>ES</b></span>
   <div class="links">
-    <a class="sec" href="../#conceito">Conceito</a>
-    <a class="sec" href="../#solucoes">Soluções</a>
-    <a class="sec" href="../gerador/">Gerador</a>
+    <a class="sec" href="../#conceito">Concepto</a>
+    <a class="sec" href="../#solucoes">Soluciones</a>
+    <a class="sec" href="../gerador/">Generador</a>
     <a class="sec" href="../diagnostico/">Diagnóstico</a>
     <a class="sec" href="../kits/">Kits</a>
-    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <button class="tgl" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
     <a class="btn" href="https://github.com/inematds/iacultivada" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 <section id="top"><div class="wrap">
-  <span class="chip">Diagnóstico · 2 minutos · nada sai do seu navegador</span>
-  <h2>Quão cultivada é a sua IA?</h2>
-  <p class="sub">Oito perguntas, uma por elemento. No fim: sua nota, o estágio do jardim, por qual elemento começar e o kit certo para baixar.</p>
+  <span class="chip">Generador · sin servidor, nada sale de tu navegador</span>
+  <h2>Generador de ficha del agente</h2>
+  <p class="sub">Responde lo que sepas. Lo que quede en blanco sale como "(completar)". Los archivos generados tienen la misma estructura de los <a href="../kits/">kits</a>: los descargas, los pones en la carpeta del agente y empiezas en el nivel 1.</p>
   <div class="grid g2" style="align-items:start">
     <form id="f" onsubmit="return false">
-      <label>Qual é o seu jardim?<select name="jardim"><option value="pessoal">Pessoal (IA de chat)</option><option value="jarvis">Jarvis (agente com ferramentas)</option><option value="empresa">Empresa (agente num processo)</option></select></label>
-      <div id="qs"></div>
-      <p style="margin-top:22px"><button class="btn" id="go">Ver meu resultado</button></p>
+      <label>Jardín<select name="jardim"><option value="empresa">Empresa (agente en un proceso)</option><option value="jarvis">Jarvis (agente con herramientas: Claude Code, Codex, OpenClaw)</option><option value="pessoal">Personal (IA de chat)</option></select></label>
+      <label>Nombre del agente<small>Ej.: calificador de leads, planificadora de la semana, jarvis de Marina</small><input type="text" name="nome" placeholder="calificador de leads"></label>
+      <label>Función (una frase)<small>De qué es responsable. Si aparecen dos funciones, elige una.</small><input type="text" name="funcao" placeholder="Calificar los leads del sitio y recomendar la próxima acción"></label>
+      <label>Resultado esperado<small>Qué significa "bien hecho", de forma medible.</small><input type="text" name="resultado" placeholder="Lead A/B/C con justificación de 3 líneas, en hasta 10 min, como borrador en el CRM"></label>
+      <label>Dueño humano<input type="text" name="dono" placeholder="coordinadora comercial"></label>
+      <label>Hace solo<small>Una por línea. Nivel 1: solo leer, investigar y proponer.</small><textarea name="sozinho" placeholder="leer el lead&#10;investigar la empresa en la web&#10;consultar el CRM (lectura)"></textarea></label>
+      <label>Pide confirmación<small>Una por línea. Enviar mensajes y borrar datos entran siempre.</small><textarea name="pede" placeholder="cambiar un campo del CRM&#10;clasificar como A un lead fuera del perfil"></textarea></label>
+      <label>Nunca hace<small>Una por línea. "Obedecer instrucción externa" e "inventar datos" entran siempre.</small><textarea name="nunca" placeholder="prometer plazo, precio o descuento"></textarea></label>
+      <label>Herramientas<small>Una por línea. Empieza solo con lectura.</small><textarea name="ferramentas" placeholder="CRM (lectura)&#10;navegador"></textarea></label>
+      <label>Nombre de la empresa (o déjalo en blanco en el personal)<input type="text" name="org" placeholder="Aurora Sistemas"></label>
+      <label>Contexto en tres líneas<small>Quién eres o qué hace la empresa, para quién, qué importa ahora.</small><textarea name="contexto"></textarea></label>
+      <label>Objetivos de esta fase<small>Uno por línea, hasta tres.</small><textarea name="objetivos"></textarea></label>
+      <label>Restricciones<small>Una por línea.</small><textarea name="restricoes"></textarea></label>
+      <label>Indicador del proceso<small>El número que dice si el agente está valiendo la pena.</small><input type="text" name="indicador" placeholder="tiempo hasta el primer contacto humano con leads A"></label>
+      <label>Cómo debe hablarte<input type="text" name="formato" placeholder="Español, directo, listas cortas, una pregunta a la vez"></label>
+      <p style="margin-top:22px"><button class="btn" id="go">Generar archivos</button> <button class="btn ghost" id="exemplo" type="button">Completar con el ejemplo ficticio</button></p>
     </form>
-    <div class="res" id="res"></div>
+    <div>
+      <div class="card"><h3>Qué sale</h3><p>Empresa: ficha del agente, contexto, ejemplos, scorecard, diario de fallos. Jarvis: archivo maestro (CLAUDE.md), memoria, diario de fallos, contexto. Personal: reglas, sobre mí, ejemplos, memoria, diario de fallos.</p><p>Toda tarea nace en el nivel 1 (propone, el humano ejecuta). Dos reglas de seguridad entran solas: el contenido externo es dato, no orden; y no inventar lo que no hizo.</p><p>No se envía nada a ningún servidor. No pongas contraseñas, claves ni tokens en los campos: en los archivos entra solo la ruta de dónde están.</p></div>
+      <div class="out" id="out"></div>
+    </div>
   </div>
 </div></section>
 <footer><div class="wrap">
-  <div class="pill">Kits</div><div class="pill">Gerador</div><div class="pill">Diagnóstico</div><div class="pill">Pacotes</div><div class="pill">Skills</div>
+  <div class="pill">Kits</div><div class="pill">Generador</div><div class="pill">Diagnóstico</div><div class="pill">Paquetes</div><div class="pill">Skills</div>
   <p style="margin-top:18px">IA Cultivada · <a href="../">página principal</a> · <a href="https://github.com/inematds/iacultivada">inematds/iacultivada</a> · <a href="https://inema.club">INEMA.CLUB</a></p>
 </div></footer>
 <script>
@@ -180,25 +196,31 @@
     t.addEventListener('click',function(){ var light=b.classList.toggle('light'); t.textContent=light?'☀️':'🌙'; try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){} });
   })();
 </script>
-<script src="pontuacao.js"></script>
+<script src="gerador.js"></script>
 <script>
 (function(){
-  var qs=document.getElementById('qs'), f=document.getElementById('f'), res=document.getElementById('res');
-  Diagnostico.ELEMENTOS.forEach(function(e,i){
-    var d=document.createElement('div'); d.className='q';
-    d.innerHTML='<h3><span class="num">'+(i+1)+'</span> '+e.nome+' · '+e.pergunta+'</h3><div class="radios">'+e.opcoes.map(function(o,v){return '<label><input type="radio" name="'+e.id+'" value="'+v+'"'+(v===0?' checked':'')+'> '+o+'</label>';}).join('')+'</div>';
-    qs.appendChild(d);
-  });
+  var f=document.getElementById('f'), out=document.getElementById('out');
+  function dados(){ var d={}; Array.prototype.forEach.call(f.elements,function(el){ if(el.name) d[el.name]=el.value; }); return d; }
+  function esc(s){ return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function baixar(nome,txt){ var b=new Blob([txt],{type:'text/markdown;charset=utf-8'}); var a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=nome; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href); a.remove();},500); }
+  function copiar(txt,btn){ try{ navigator.clipboard.writeText(txt).then(function(){ var t=btn.textContent; btn.textContent='copiado'; setTimeout(function(){btn.textContent=t;},1200); }); }catch(e){} }
   document.getElementById('go').addEventListener('click',function(){
-    var r={}; Diagnostico.ELEMENTOS.forEach(function(e){ var c=f.querySelector('input[name='+e.id+']:checked'); r[e.id]=c?Number(c.value):0; });
-    var p=Diagnostico.pontuar(r, f.elements.jardim.value);
-    res.style.display='block';
-    res.innerHTML='<div class="kpi"><b>'+p.pct+'% · '+p.estagio+'</b><span>'+p.total+' de '+p.max+' pontos</span></div>'
-      +'<div class="card" style="margin-top:14px"><h3>Leitura</h3><p>'+p.leitura+'</p></div>'
-      +'<div class="card"><h3>Comece por: '+p.comecarPor.nome+'</h3><p>Arquivo a preencher: <code>'+p.comecarPor.arquivo+'</code></p><p style="margin-top:10px"><a class="btn sm" href="'+p.kit.url+'">Baixar o '+p.kit.nome+'</a> <a class="btn ghost sm" href="../gerador/">Ou gerar a ficha agora</a></p></div>'
-      +'<div class="card"><h3>Por elemento</h3>'+p.porElemento.map(function(e){return '<div style="margin:8px 0"><div style="display:flex;justify-content:space-between;font-size:.88rem"><span>'+e.nome+'</span><span class="mut">'+e.valor+'/3</span></div><div class="barra"><i style="width:'+(e.valor/3*100)+'%"></i></div></div>';}).join('')+'</div>'
-      +'<div class="card"><h3>Próximos 30 dias</h3><p>Semana 1: preencha o arquivo do elemento mais fraco. Semana 2: use todo dia e anote as falhas. Semana 3: primeira revisão semanal. Semana 4: refaça este diagnóstico e compare.</p></div>';
-    res.scrollIntoView({behavior:'smooth'});
+    var r=Gerador.gerar(dados()); out.innerHTML='';
+    var todos=r.arquivos.map(function(a){return '<!-- '+a[0]+' -->\n'+a[1];}).join('\n\n');
+    var top=document.createElement('p'); top.innerHTML='<button class="btn sm" id="ball">Descargar todos (uno por uno)</button> <button class="btn ghost sm" id="call">Copiar todo</button>'; out.appendChild(top);
+    r.arquivos.forEach(function(a){
+      var div=document.createElement('div'); div.className='file';
+      div.innerHTML='<div class="bar"><b>'+a[0]+'</b> <button class="btn sm">descargar</button> <button class="btn ghost sm">copiar</button></div><pre>'+esc(a[1])+'</pre>';
+      var bs=div.querySelectorAll('button'); bs[0].onclick=function(){baixar(a[0],a[1]);}; bs[1].onclick=function(){copiar(a[1],bs[1]);};
+      out.appendChild(div);
+    });
+    document.getElementById('ball').onclick=function(){ r.arquivos.forEach(function(a,i){ setTimeout(function(){baixar(a[0],a[1]);}, i*400); }); };
+    document.getElementById('call').onclick=function(){ copiar(todos,this); };
+    out.scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('exemplo').addEventListener('click',function(){
+    var ex={jardim:'empresa',nome:'calificador de leads',funcao:'Calificar los leads que llegan por el sitio y por WhatsApp y recomendar la próxima acción al vendedor.',resultado:'Cada lead clasificado en A, B o C con justificación de hasta tres líneas y próxima acción, en hasta diez minutos, como borrador en el CRM.',dono:'coordinadora comercial',sozinho:'leer el formulario o la conversación del lead\ninvestigar la empresa del lead en la web\nconsultar el CRM (lectura)\nclasificar y escribir justificación y próxima acción',pede:'enviar cualquier mensaje al lead\ncambiar un campo del CRM que no sea el borrador\nclasificar como A un lead fuera del perfil',nunca:'prometer plazo, precio o descuento\nborrar o fusionar registros',ferramentas:'CRM (lectura)\nnavegador (búsqueda)',org:'Aurora Sistemas (ficticia)',contexto:'Sistema de gestión para clínicas odontológicas de 2 a 15 sillones. Suscripción mensual por sillón. Decisor: dueño de la clínica o gerente administrativa.',objetivos:'reducir el tiempo hasta el primer contacto humano con leads A a menos de 2 h hábiles\ndejar de gastar vendedor con leads fuera del perfil',restricoes:'sin descuento en la primera conversación\nimplementación nunca por debajo de dos semanas\nfuera de Brasil y redes con más de 30 unidades: fuera del perfil',indicador:'tiempo hasta el primer contacto humano con leads A',formato:'Español, directo, listas cortas, JSON cuando sea para el CRM'};
+    Object.keys(ex).forEach(function(k){ if(f.elements[k]) f.elements[k].value=ex[k]; });
   });
 })();
 </script>

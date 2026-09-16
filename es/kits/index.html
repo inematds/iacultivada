@@ -1,12 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diagnóstico de cultivo — IA Cultivada</title>
-<meta name="description" content="Oito perguntas, uma por elemento do cultivo, que dão sua nota de maturidade e dizem por onde começar, com o kit certo para baixar.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kits de cultivo — IA Cultivada</title><meta name="description" content="Tres kits para descargar: personal, Jarvis y empresa. Los archivos que cultivan un agente, ya estructurados, con ejemplo ficticio completado.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -109,33 +104,7 @@
   nav .brand,nav .langs,nav .links a{white-space:nowrap}
   @media(max-width:1180px){nav .links a.sec{display:none}}
 </style>
-
-<style>
-  form label{display:block;font-family:Sora;font-weight:600;font-size:.9rem;margin:18px 0 6px}
-  form small{display:block;color:var(--mut);font-weight:400;font-family:Inter;font-size:.82rem;margin-top:2px}
-  input[type=text],textarea,select{width:100%;background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.5 Inter,system-ui,sans-serif}
-  textarea{min-height:74px;resize:vertical}
-  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--amb)}
-  .radios{display:grid;gap:8px}
-  .radios label{display:flex;gap:10px;align-items:flex-start;font-family:Inter;font-weight:400;font-size:.95rem;margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer}
-  .radios label:has(input:checked){border-color:var(--amb);background:rgba(226,162,59,.08)}
-  .radios input{margin-top:4px}
-  .out{margin-top:30px}
-  .file{margin-bottom:22px}
-  .file .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
-  .file .bar b{font-family:"JetBrains Mono";font-size:.9rem;color:var(--amb)}
-  .btn.sm{padding:.4em .8em;font-size:.82rem;border:none;cursor:pointer}
-  .btn.ghost.sm{border:1px solid var(--line)}
-  .barra{height:10px;background:var(--bg2);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:6px 0 2px}
-  .barra i{display:block;height:100%;background:var(--amb)}
-  .res{display:none}
-  .res .card{margin-bottom:14px}
-  .q{margin-bottom:26px}
-  .q h3{font-size:1rem;margin-bottom:8px}
-</style>
-
-</head>
-<body>
+</head><body>
 <nav><div class="wrap">
   <a class="brand" href="../"><span class="emoji">🌱</span> IA Cultivada</a>
   <span class="sep">|</span>
@@ -144,32 +113,30 @@
     <span class="sep">-</span>
     <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
   </span>
-  <span class="sep">|</span><span class="langs"><b>PT</b> · <a class="sec" href="../en/diagnostico/">EN</a> · <a class="sec" href="../es/diagnostico/">ES</a></span>
+  <span class="sep">|</span><span class="langs"><a class="sec" href="../../kits/">PT</a> · <a class="sec" href="../../en/kits/">EN</a> · <b>ES</b></span>
   <div class="links">
-    <a class="sec" href="../#conceito">Conceito</a>
-    <a class="sec" href="../#solucoes">Soluções</a>
-    <a class="sec" href="../gerador/">Gerador</a>
+    <a class="sec" href="../#conceito">Concepto</a>
+    <a class="sec" href="../#solucoes">Soluciones</a>
+    <a class="sec" href="../gerador/">Generador</a>
     <a class="sec" href="../diagnostico/">Diagnóstico</a>
     <a class="sec" href="../kits/">Kits</a>
-    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <button class="tgl" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
     <a class="btn" href="https://github.com/inematds/iacultivada" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 <section id="top"><div class="wrap">
-  <span class="chip">Diagnóstico · 2 minutos · nada sai do seu navegador</span>
-  <h2>Quão cultivada é a sua IA?</h2>
-  <p class="sub">Oito perguntas, uma por elemento. No fim: sua nota, o estágio do jardim, por qual elemento começar e o kit certo para baixar.</p>
-  <div class="grid g2" style="align-items:start">
-    <form id="f" onsubmit="return false">
-      <label>Qual é o seu jardim?<select name="jardim"><option value="pessoal">Pessoal (IA de chat)</option><option value="jarvis">Jarvis (agente com ferramentas)</option><option value="empresa">Empresa (agente num processo)</option></select></label>
-      <div id="qs"></div>
-      <p style="margin-top:22px"><button class="btn" id="go">Ver meu resultado</button></p>
-    </form>
-    <div class="res" id="res"></div>
+  <span class="chip">Kits · descarga, borra el ejemplo, escribe el tuyo</span>
+  <h2>Tres kits de cultivo</h2>
+  <p class="sub">Cada kit trae los archivos que cultivan un agente, ya estructurados y con un ejemplo ficticio completado para que veas el tamaño correcto. Reglas: una página buena vale más que veinte; toda corrección va al archivo, no a la conversación; revisión semanal; ningún secreto dentro de los archivos.</p>
+  <div class="grid g3">
+    <div class="card"><h3>💬 Kit personal</h3><p>Para IA de chat (ChatGPT, Claude, Gemini). Sobre mí, reglas, ejemplos, memoria, diario de fallos. Lo pegas en las instrucciones del chat.</p><p style="margin-top:12px"><a class="btn" href="../../kits/kit-pessoal.zip">Descargar kit-pessoal.zip</a> <a class="btn ghost" href="https://github.com/inematds/iacultivada/tree/main/kits/kit-pessoal" target="_blank" rel="noopener">ver en GitHub</a></p></div>
+    <div class="card"><h3>🤖 Kit Jarvis</h3><p>Para agente con herramientas (Claude Code, Codex, OpenClaw). CLAUDE.md y AGENTS.md, memoria, diario de fallos, seguridad, dos runbooks. Va en la carpeta en la que trabaja el agente.</p><p style="margin-top:12px"><a class="btn" href="../../kits/kit-jarvis.zip">Descargar kit-jarvis.zip</a> <a class="btn ghost" href="https://github.com/inematds/iacultivada/tree/main/kits/kit-jarvis" target="_blank" rel="noopener">ver en GitHub</a></p></div>
+    <div class="card"><h3>🏢 Kit empresa</h3><p>Para un agente en un proceso. Ficha del agente, contexto, veinte ejemplos anotados, scorecard, diario de fallos. Un proceso, un agente, un indicador.</p><p style="margin-top:12px"><a class="btn" href="../../kits/kit-empresa.zip">Descargar kit-empresa.zip</a> <a class="btn ghost" href="https://github.com/inematds/iacultivada/tree/main/kits/kit-empresa" target="_blank" rel="noopener">ver en GitHub</a></p></div>
   </div>
+  <p class="sub" style="margin-top:2em">Los archivos de los kits están en portugués; la estructura y el LEIA-ME explican cada archivo. ¿Prefieres que el agente escriba los archivos por ti? Instala las <a href="https://github.com/inematds/iacultivada/tree/main/skills" target="_blank" rel="noopener">skills /cultivar y /revisao-semanal</a>. ¿No sabes por dónde empezar? Haz el <a href="../diagnostico/">diagnóstico</a>. ¿Quieres la ficha completada ahora? Usa el <a href="../gerador/">generador</a>. El repositorio es un template de GitHub: "Use this template" crea tu copia con todo.</p>
 </div></section>
 <footer><div class="wrap">
-  <div class="pill">Kits</div><div class="pill">Gerador</div><div class="pill">Diagnóstico</div><div class="pill">Pacotes</div><div class="pill">Skills</div>
+  <div class="pill">Kits</div><div class="pill">Generador</div><div class="pill">Diagnóstico</div><div class="pill">Paquetes</div><div class="pill">Skills</div>
   <p style="margin-top:18px">IA Cultivada · <a href="../">página principal</a> · <a href="https://github.com/inematds/iacultivada">inematds/iacultivada</a> · <a href="https://inema.club">INEMA.CLUB</a></p>
 </div></footer>
 <script>
@@ -180,27 +147,4 @@
     t.addEventListener('click',function(){ var light=b.classList.toggle('light'); t.textContent=light?'☀️':'🌙'; try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){} });
   })();
 </script>
-<script src="pontuacao.js"></script>
-<script>
-(function(){
-  var qs=document.getElementById('qs'), f=document.getElementById('f'), res=document.getElementById('res');
-  Diagnostico.ELEMENTOS.forEach(function(e,i){
-    var d=document.createElement('div'); d.className='q';
-    d.innerHTML='<h3><span class="num">'+(i+1)+'</span> '+e.nome+' · '+e.pergunta+'</h3><div class="radios">'+e.opcoes.map(function(o,v){return '<label><input type="radio" name="'+e.id+'" value="'+v+'"'+(v===0?' checked':'')+'> '+o+'</label>';}).join('')+'</div>';
-    qs.appendChild(d);
-  });
-  document.getElementById('go').addEventListener('click',function(){
-    var r={}; Diagnostico.ELEMENTOS.forEach(function(e){ var c=f.querySelector('input[name='+e.id+']:checked'); r[e.id]=c?Number(c.value):0; });
-    var p=Diagnostico.pontuar(r, f.elements.jardim.value);
-    res.style.display='block';
-    res.innerHTML='<div class="kpi"><b>'+p.pct+'% · '+p.estagio+'</b><span>'+p.total+' de '+p.max+' pontos</span></div>'
-      +'<div class="card" style="margin-top:14px"><h3>Leitura</h3><p>'+p.leitura+'</p></div>'
-      +'<div class="card"><h3>Comece por: '+p.comecarPor.nome+'</h3><p>Arquivo a preencher: <code>'+p.comecarPor.arquivo+'</code></p><p style="margin-top:10px"><a class="btn sm" href="'+p.kit.url+'">Baixar o '+p.kit.nome+'</a> <a class="btn ghost sm" href="../gerador/">Ou gerar a ficha agora</a></p></div>'
-      +'<div class="card"><h3>Por elemento</h3>'+p.porElemento.map(function(e){return '<div style="margin:8px 0"><div style="display:flex;justify-content:space-between;font-size:.88rem"><span>'+e.nome+'</span><span class="mut">'+e.valor+'/3</span></div><div class="barra"><i style="width:'+(e.valor/3*100)+'%"></i></div></div>';}).join('')+'</div>'
-      +'<div class="card"><h3>Próximos 30 dias</h3><p>Semana 1: preencha o arquivo do elemento mais fraco. Semana 2: use todo dia e anote as falhas. Semana 3: primeira revisão semanal. Semana 4: refaça este diagnóstico e compare.</p></div>';
-    res.scrollIntoView({behavior:'smooth'});
-  });
-})();
-</script>
-</body>
-</html>
+</body></html>
