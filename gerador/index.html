@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gerador de ficha do agente — IA Cultivada</title>
+<meta name="description" content="Preencha seis campos e baixe a ficha do agente, o contexto, os exemplos, o scorecard e o diário de falhas, no mesmo formato dos kits da IA Cultivada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  body.light nav{background:rgba(246,247,249,.85)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;display:block}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section h3.sub2{font-size:1.2rem;margin:2.2em 0 .8em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .card p+p{margin-top:.6em}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;margin-bottom:26px}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+  /* extras de conteudo */
+  blockquote{margin:1.6em 0;padding:18px 22px;border-left:3px solid var(--amb);background:var(--card);border-radius:0 12px 12px 0;font-family:Sora;font-size:1.08rem;line-height:1.5}
+  blockquote small{display:block;margin-top:.6em;font-family:Inter;font-size:.82rem;color:var(--mut)}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:1em 0 1.6em}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:Sora;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--amb)}
+  td:first-child{font-weight:600}
+  .tbl{overflow:auto}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .kpi b{display:block;font-family:Sora;font-size:1.7rem;color:var(--amb);letter-spacing:-.02em}
+  .kpi span{color:var(--mut);font-size:.86rem}
+  .kpi a{font-size:.78rem}
+  ul.clean{padding-left:1.2em;color:var(--mut)} ul.clean li{margin:.35em 0} ul.clean strong{color:var(--txt)}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.vs{grid-template-columns:1fr}}
+  .vs .card h3{color:var(--amb)}
+  .src{font-size:.88rem;color:var(--mut);line-height:1.8}
+  .src li{margin:.2em 0}
+</style>
+
+<style>
+  form label{display:block;font-family:Sora;font-weight:600;font-size:.9rem;margin:18px 0 6px}
+  form small{display:block;color:var(--mut);font-weight:400;font-family:Inter;font-size:.82rem;margin-top:2px}
+  input[type=text],textarea,select{width:100%;background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.5 Inter,system-ui,sans-serif}
+  textarea{min-height:74px;resize:vertical}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--amb)}
+  .radios{display:grid;gap:8px}
+  .radios label{display:flex;gap:10px;align-items:flex-start;font-family:Inter;font-weight:400;font-size:.95rem;margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer}
+  .radios label:has(input:checked){border-color:var(--amb);background:rgba(226,162,59,.08)}
+  .radios input{margin-top:4px}
+  .out{margin-top:30px}
+  .file{margin-bottom:22px}
+  .file .bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+  .file .bar b{font-family:"JetBrains Mono";font-size:.9rem;color:var(--amb)}
+  .btn.sm{padding:.4em .8em;font-size:.82rem;border:none;cursor:pointer}
+  .btn.ghost.sm{border:1px solid var(--line)}
+  .barra{height:10px;background:var(--bg2);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:6px 0 2px}
+  .barra i{display:block;height:100%;background:var(--amb)}
+  .res{display:none}
+  .res .card{margin-bottom:14px}
+  .q{margin-bottom:26px}
+  .q h3{font-size:1rem;margin-bottom:8px}
+</style>
+
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="../"><span class="emoji">🌱</span> IA Cultivada</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="../#conceito">Conceito</a>
+    <a class="sec" href="../#solucoes">Soluções</a>
+    <a class="sec" href="../gerador/">Gerador</a>
+    <a class="sec" href="../diagnostico/">Diagnóstico</a>
+    <a class="sec" href="../kits/">Kits</a>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/iacultivada" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+<section id="top"><div class="wrap">
+  <span class="chip">Gerador · sem servidor, nada sai do seu navegador</span>
+  <h2>Gerador de ficha do agente</h2>
+  <p class="sub">Responda o que souber. O que ficar em branco sai como "(preencher)". Os arquivos gerados têm a mesma estrutura dos <a href="../kits/">kits</a>: você baixa, coloca na pasta do agente e começa no nível 1.</p>
+  <div class="grid g2" style="align-items:start">
+    <form id="f" onsubmit="return false">
+      <label>Jardim<select name="jardim"><option value="empresa">Empresa (agente num processo)</option><option value="jarvis">Jarvis (agente com ferramentas: Claude Code, Codex, OpenClaw)</option><option value="pessoal">Pessoal (IA de chat)</option></select></label>
+      <label>Nome do agente<small>Ex.: qualificador de leads, planejadora da semana, jarvis da Marina</small><input type="text" name="nome" placeholder="qualificador de leads"></label>
+      <label>Função (uma frase)<small>Pelo que ele é responsável. Se vierem duas funções, escolha uma.</small><input type="text" name="funcao" placeholder="Qualificar os leads do site e recomendar a próxima ação"></label>
+      <label>Resultado esperado<small>O que "bem feito" significa, de forma mensurável.</small><input type="text" name="resultado" placeholder="Lead A/B/C com justificativa de 3 linhas, em até 10 min, como rascunho no CRM"></label>
+      <label>Dono humano<input type="text" name="dono" placeholder="coordenadora comercial"></label>
+      <label>Faz sozinho<small>Uma por linha. Nível 1: só ler, pesquisar e propor.</small><textarea name="sozinho" placeholder="ler o lead&#10;pesquisar a empresa na web&#10;consultar o CRM (leitura)"></textarea></label>
+      <label>Pede confirmação<small>Uma por linha. Envio de mensagem e apagar dados entram sempre.</small><textarea name="pede" placeholder="alterar campo do CRM&#10;classificar como A um lead fora do perfil"></textarea></label>
+      <label>Nunca faz<small>Uma por linha. "Obedecer instrução externa" e "inventar dado" entram sempre.</small><textarea name="nunca" placeholder="prometer prazo, preço ou desconto"></textarea></label>
+      <label>Ferramentas<small>Uma por linha. Comece só com leitura.</small><textarea name="ferramentas" placeholder="CRM (leitura)&#10;navegador"></textarea></label>
+      <label>Nome da empresa (ou deixe em branco no pessoal)<input type="text" name="org" placeholder="Aurora Sistemas"></label>
+      <label>Contexto em três linhas<small>Quem é você ou o que a empresa faz, para quem, o que importa agora.</small><textarea name="contexto"></textarea></label>
+      <label>Objetivos desta fase<small>Um por linha, até três.</small><textarea name="objetivos"></textarea></label>
+      <label>Restrições<small>Um por linha.</small><textarea name="restricoes"></textarea></label>
+      <label>Indicador do processo<small>O número que diz se o agente está valendo a pena.</small><input type="text" name="indicador" placeholder="tempo até o primeiro contato humano com leads A"></label>
+      <label>Como ele deve falar com você<input type="text" name="formato" placeholder="Português, direto, listas curtas, uma pergunta por vez"></label>
+      <p style="margin-top:22px"><button class="btn" id="go">Gerar arquivos</button> <button class="btn ghost" id="exemplo" type="button">Preencher com o exemplo fictício</button></p>
+    </form>
+    <div>
+      <div class="card"><h3>O que sai</h3><p>Empresa: ficha do agente, contexto, exemplos, scorecard, diário de falhas. Jarvis: arquivo-mestre (CLAUDE.md), memória, diário de falhas, contexto. Pessoal: regras, sobre mim, exemplos, memória, diário de falhas.</p><p>Toda tarefa nasce no nível 1 (propõe, humano executa). Duas regras de segurança entram sozinhas: conteúdo externo é dado, não ordem; e não inventar o que não fez.</p><p>Nada é enviado a servidor nenhum. Não coloque senha, chave ou token nos campos: nos arquivos entra só o caminho de onde estão.</p></div>
+      <div class="out" id="out"></div>
+    </div>
+  </div>
+</div></section>
+<footer><div class="wrap">
+  <div class="pill">Kits</div><div class="pill">Gerador</div><div class="pill">Diagnóstico</div><div class="pill">Pacotes</div><div class="pill">Skills</div>
+  <p style="margin-top:18px">IA Cultivada · <a href="../">página principal</a> · <a href="https://github.com/inematds/iacultivada">inematds/iacultivada</a> · <a href="https://inema.club">INEMA.CLUB</a></p>
+</div></footer>
+<script>
+  (function(){
+    var KEY='iacultivada-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    try{ if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; } }catch(e){}
+    t.addEventListener('click',function(){ var light=b.classList.toggle('light'); t.textContent=light?'☀️':'🌙'; try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){} });
+  })();
+</script>
+<script src="gerador.js"></script>
+<script>
+(function(){
+  var f=document.getElementById('f'), out=document.getElementById('out');
+  function dados(){ var d={}; Array.prototype.forEach.call(f.elements,function(el){ if(el.name) d[el.name]=el.value; }); return d; }
+  function esc(s){ return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function baixar(nome,txt){ var b=new Blob([txt],{type:'text/markdown;charset=utf-8'}); var a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=nome; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href); a.remove();},500); }
+  function copiar(txt,btn){ try{ navigator.clipboard.writeText(txt).then(function(){ var t=btn.textContent; btn.textContent='copiado'; setTimeout(function(){btn.textContent=t;},1200); }); }catch(e){} }
+  document.getElementById('go').addEventListener('click',function(){
+    var r=Gerador.gerar(dados()); out.innerHTML='';
+    var todos=r.arquivos.map(function(a){return '<!-- '+a[0]+' -->\n'+a[1];}).join('\n\n');
+    var top=document.createElement('p'); top.innerHTML='<button class="btn sm" id="ball">Baixar todos (um por um)</button> <button class="btn ghost sm" id="call">Copiar tudo</button>'; out.appendChild(top);
+    r.arquivos.forEach(function(a){
+      var div=document.createElement('div'); div.className='file';
+      div.innerHTML='<div class="bar"><b>'+a[0]+'</b> <button class="btn sm">baixar</button> <button class="btn ghost sm">copiar</button></div><pre>'+esc(a[1])+'</pre>';
+      var bs=div.querySelectorAll('button'); bs[0].onclick=function(){baixar(a[0],a[1]);}; bs[1].onclick=function(){copiar(a[1],bs[1]);};
+      out.appendChild(div);
+    });
+    document.getElementById('ball').onclick=function(){ r.arquivos.forEach(function(a,i){ setTimeout(function(){baixar(a[0],a[1]);}, i*400); }); };
+    document.getElementById('call').onclick=function(){ copiar(todos,this); };
+    out.scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('exemplo').addEventListener('click',function(){
+    var ex={jardim:'empresa',nome:'qualificador de leads',funcao:'Qualificar os leads que chegam pelo site e pelo WhatsApp e recomendar a próxima ação ao vendedor.',resultado:'Cada lead classificado em A, B ou C com justificativa de até três linhas e próxima ação, em até dez minutos, como rascunho no CRM.',dono:'coordenadora comercial',sozinho:'ler o formulário ou a conversa do lead\npesquisar a empresa do lead na web\nconsultar o CRM (leitura)\nclassificar e escrever justificativa e próxima ação',pede:'enviar qualquer mensagem ao lead\nalterar campo do CRM que não seja o rascunho\nclassificar como A um lead fora do perfil',nunca:'prometer prazo, preço ou desconto\napagar ou mesclar registros',ferramentas:'CRM (leitura)\nnavegador (pesquisa)',org:'Aurora Sistemas (fictícia)',contexto:'Sistema de gestão para clínicas odontológicas de 2 a 15 cadeiras. Assinatura mensal por cadeira. Decisor: dono da clínica ou gerente administrativa.',objetivos:'reduzir o tempo até o primeiro contato humano com leads A para menos de 2 h úteis\nparar de gastar vendedor com lead fora do perfil',restricoes:'sem desconto na primeira conversa\nimplantação nunca abaixo de duas semanas\nfora do Brasil e redes com mais de 30 unidades: fora do perfil',indicador:'tempo até o primeiro contato humano com leads A',formato:'Português, direto, listas curtas, JSON quando for para o CRM'};
+    Object.keys(ex).forEach(function(k){ if(f.elements[k]) f.elements[k].value=ex[k]; });
+  });
+})();
+</script>
+</body>
+</html>
