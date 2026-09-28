@@ -127,6 +127,7 @@
   <span class="sep">|</span><span class="langs"><b>PT</b> · <a class="sec" href="en/">EN</a> · <a class="sec" href="es/">ES</a></span>
   <div class="links">
     <a class="sec" href="#conceito">Conceito</a>
+    <a class="sec" href="#framework">Framework</a>
     <a class="sec" href="#pessoal">Vida pessoal</a>
     <a class="sec" href="#jarvis">Jarvis</a>
     <a class="sec" href="#negocios">Negócios</a>
@@ -206,6 +207,144 @@
     <div class="card"><h3>🧹 Cultivar dá trabalho.</h3><p>Contexto ruim, exemplo ruim e regra vaga produzem agente ruim. O modelo é o mesmo do concorrente. O jardim, não.</p></div>
     <div class="card"><h3>🧠 Antropomorfizar tem limite.</h3><p>"Dar feedback" aqui é editar o ambiente, não conversar até ele "entender".</p></div>
   </div>
+</div></section>
+
+<!-- ============ FRAMEWORK ============ -->
+<section id="framework"><div class="wrap">
+
+  <!-- A) Escada de maturidade -->
+  <span class="chip">Framework · Escada de maturidade</span>
+  <h2>Da IA executora à IA cultivada: quatro níveis</h2>
+  <p class="sub">Nem toda IA com memória é cultivada e nem todo agente é cultivado. A escada ajuda a localizar onde você está e o que falta para o próximo nível.</p>
+
+  <div class="grid g4">
+    <div class="card"><div class="num">1</div><h3>IA executora</h3><p>Pedido → resposta. Execução pontual, sem memória estruturada, sem avaliação, sem melhoria contínua.</p></div>
+    <div class="card"><div class="num">2</div><h3>IA contextual</h3><p>Pedido → contexto/memória → resposta. Personalização e adaptação ao usuário, mas ainda sem ciclo de melhoria.</p></div>
+    <div class="card"><div class="num">3</div><h3>Agente</h3><p>Objetivo → raciocínio → ferramentas → ações → resultado. Autonomia e capacidade de agir, mas pode repetir os mesmos erros.</p></div>
+    <div class="card"><div class="num">4</div><h3>IA cultivada</h3><p>Objetivo → ação → resultado → avaliação → feedback → ajuste → nova execução. Melhoria progressiva do sistema.</p></div>
+  </div>
+
+  <!-- B) O que NÃO é IA cultivada -->
+  <h3 class="sub2">O que NÃO é IA cultivada</h3>
+
+  <div class="grid g4">
+    <div class="card"><h3>Prompt simples</h3><p>Prompt → ChatGPT → resposta</p></div>
+    <div class="card"><h3>RAG simples</h3><p>Pergunta → documentos → resposta</p></div>
+    <div class="card"><h3>n8n/Make fixo</h3><p>Evento → regras → execução</p></div>
+    <div class="card"><h3>Agente sem avaliação</h3><p>Objetivo → agente → ação → resultado → fim</p></div>
+  </div>
+
+  <p>Todos usam IA, mas nenhum tem ciclo real de evolução. O cultivo começa quando entram: memória, avaliação, feedback, observabilidade, histórico, versionamento e nova execução.</p>
+
+  <!-- C) Mapa dos sistemas atuais -->
+  <h3 class="sub2">Quem já permite construir IA cultivada em 2026?</h3>
+
+  <div class="tbl"><table>
+    <tr><th>Sistema / arquitetura</th><th>Agente</th><th>Memória</th><th>Ferramentas</th><th>Avaliação</th><th>Pode ser cultivado</th></tr>
+    <tr><td>OpenAI Codex + Agents API + Evals</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
+    <tr><td>Gemini Enterprise Agent Platform</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
+    <tr><td>LangGraph</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
+    <tr><td>Claude Code / Claude Agent SDK</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Construível</td><td>Sim</td></tr>
+    <tr><td>ChatGPT</td><td>Parcial</td><td>Sim</td><td>Sim</td><td>Parcial</td><td>Parcial</td></tr>
+    <tr><td>LLM via API simples</td><td>Não</td><td>Não</td><td>Não</td><td>Não</td><td>Não</td></tr>
+    <tr><td>n8n / Make simples</td><td>Fluxo</td><td>Não</td><td>Sim</td><td>Não</td><td>Não</td></tr>
+    <tr><td>n8n / Make + agentes + memória + avaliação</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Sim</td></tr>
+  </table></div>
+
+  <blockquote>A ferramenta não é cultivada. A arquitetura é. O mesmo modelo pode funcionar em uma arquitetura simples ou em um sistema totalmente cultivado.</blockquote>
+
+  <!-- D) Memória vs cultivo -->
+  <h3 class="sub2">Memória não é aprendizado</h3>
+
+  <div class="vs">
+    <div class="card"><h3>Memória</h3><p>O agente salva que o usuário prefere respostas curtas. Isso é personalização: contexto persistente, adaptação. Mas não significa evolução do sistema.</p></div>
+    <div class="card"><h3>Cultivo</h3><p>O agente executa, erra, o erro é registrado, a causa é analisada, uma regra é modificada, o agente executa novamente e o novo resultado é avaliado. Isso é evolução.</p></div>
+  </div>
+
+  <blockquote>Memória guarda contexto. Cultivo melhora comportamento.</blockquote>
+
+  <!-- E) Caso completo: clínica -->
+  <h3 class="sub2">Caso completo: agente de atendimento de clínica</h3>
+  <p class="sub">Um único caso acompanhando todas as etapas, do zero à autonomia.</p>
+
+  <div class="phase"><div class="tag">Etapa inicial</div><div class="d"><strong>Configuração</strong><span>O agente recebe horários, médicos, procedimentos, regras, agenda e política de cancelamento. No início, apenas sugere respostas.</span></div></div>
+  <div class="phase"><div class="tag">1ª falha</div><div class="d"><strong>Erro detectado</strong><span>Marca consulta fora do horário do médico. Registro: erro de disponibilidade.</span></div></div>
+  <div class="phase"><div class="tag">Correção</div><div class="d"><strong>Regra adicionada</strong><span>Nova regra: sempre consultar agenda antes de propor horário.</span></div></div>
+  <div class="phase"><div class="tag">Reexecução</div><div class="d"><strong>Resultado medido</strong><span>18 acertos em 20 interações. Scorecard registrado.</span></div></div>
+  <div class="phase"><div class="tag">Novo ciclo</div><div class="d"><strong>Evolução contínua</strong><span>Depois de novas correções: 20 acertos em 20 interações durante duas semanas.</span></div></div>
+  <div class="phase"><div class="tag">Autonomia</div><div class="d"><strong>Confiança conquistada</strong><span>Antes: agente sugere, humano aprova. Depois: agente executa, humano supervisiona exceções.</span></div></div>
+
+  <!-- F) Observabilidade do cultivo -->
+  <h3 class="sub2">Observabilidade: o que registrar em cada execução</h3>
+
+  <div class="grid g4">
+    <div class="card"><p>Objetivo recebido</p></div>
+    <div class="card"><p>Decisão tomada</p></div>
+    <div class="card"><p>Raciocínio operacional</p></div>
+    <div class="card"><p>Ferramenta usada</p></div>
+    <div class="card"><p>Tempo</p></div>
+    <div class="card"><p>Custo</p></div>
+    <div class="card"><p>Resultado</p></div>
+    <div class="card"><p>Erro</p></div>
+    <div class="card"><p>Intervenção humana</p></div>
+    <div class="card"><p>Feedback</p></div>
+    <div class="card"><p>Correção aplicada</p></div>
+    <div class="card"><p>Versão do agente</p></div>
+  </div>
+
+  <h3 class="sub2">Exemplo de evolução</h3>
+
+  <div class="grid g3">
+    <div class="card"><h3>v1.0</h3><p>100 execuções, 12 falhas, 3 padrões de erro, 4 regras modificadas</p></div>
+    <div class="card"><h3>v1.1</h3><p>100 execuções, 5 falhas. As correções funcionaram.</p></div>
+    <div class="card"><h3>v1.2</h3><p>E assim sucessivamente. Cada versão registra, mede e melhora.</p></div>
+  </div>
+
+  <!-- G) Jardim como ativo estratégico -->
+  <h3 class="sub2">O jardim acumulado como propriedade intelectual</h3>
+
+  <div class="vs">
+    <div class="card"><h3>Empresa A</h3><p>Modelo X. Sem histórico. Poucos exemplos. Nenhuma avaliação acumulada.</p></div>
+    <div class="card"><h3>Empresa B</h3><p>Mesmo modelo X. 10.000 execuções. 1.200 avaliações. 300 regras refinadas. 500 exemplos. Histórico de erros. Biblioteca de skills. Ferramentas integradas. Memória organizacional.</p></div>
+  </div>
+
+  <p>O modelo é igual. O resultado provavelmente não será. O ativo passa a ser: contexto + memória + exemplos + avaliações + histórico de falhas + regras + ferramentas + skills + feedback acumulado.</p>
+
+  <blockquote>O modelo pode ser o mesmo que o do concorrente. O jardim, não.</blockquote>
+
+  <!-- H) Autonomia progressiva -->
+  <h3 class="sub2">Critérios para aumentar autonomia</h3>
+  <p class="sub">Quando um agente está cultivado o suficiente para receber mais autonomia? A resposta usa métricas, não percepção.</p>
+
+  <div class="grid g4">
+    <div class="card"><p>Histórico de execuções</p></div>
+    <div class="card"><p>Scorecard</p></div>
+    <div class="card"><p>Taxa de erro</p></div>
+    <div class="card"><p>Gravidade do erro</p></div>
+    <div class="card"><p>Custo do erro</p></div>
+    <div class="card"><p>Estabilidade</p></div>
+    <div class="card"><p>Intervenção humana</p></div>
+    <div class="card"><p>Consistência no tempo</p></div>
+  </div>
+
+  <div class="grid g4" style="margin-top:16px">
+    <div class="card"><div class="num">1</div><p>Agente apenas recomenda</p></div>
+    <div class="card"><div class="num">2</div><p>Agente executa com aprovação humana</p></div>
+    <div class="card"><div class="num">3</div><p>Agente executa e humano revisa exceções</p></div>
+    <div class="card"><div class="num">4</div><p>Agente opera automaticamente dentro de limites definidos</p></div>
+  </div>
+
+  <blockquote>Autonomia deve ser conquistada por evidência, não por confiança.</blockquote>
+
+  <!-- I) Frases-chave -->
+  <h3 class="sub2">Frases-chave</h3>
+
+  <blockquote>Nem todo agente é cultivado.</blockquote>
+  <blockquote>Execução sem avaliação gera repetição.</blockquote>
+  <blockquote>Feedback transforma experiência em evolução.</blockquote>
+  <blockquote>O modelo é a semente. O sistema é o jardim.</blockquote>
+  <blockquote>O verdadeiro ativo está no cultivo acumulado.</blockquote>
+
 </div></section>
 
 <!-- ============ VIDA PESSOAL ============ -->
