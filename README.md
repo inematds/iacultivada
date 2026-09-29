@@ -55,3 +55,8 @@ Os oito elementos do cultivo: **função, contexto, ferramentas, regras, exemplo
 ## Licença
 
 Conteúdo educacional do [INEMA.CLUB](https://inema.club). Pode compartilhar com atribuição.
+
+
+## Vídeo completo
+
+[Assistir ao curso com Nei](https://inematds.github.io/iacultivada/videos/). Ilustrações, capítulos e legendas. Produzido com [Explicavideos](https://inematds.github.io/explicavideos/guia/).
