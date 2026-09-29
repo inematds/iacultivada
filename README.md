@@ -59,4 +59,4 @@ Conteúdo educacional do [INEMA.CLUB](https://inema.club). Pode compartilhar com
 
 ## Vídeo completo
 
-[Assistir ao curso com Nei](https://inematds.github.io/iacultivada/videos/). Ilustrações, capítulos e legendas. Produzido com [Explicavideos](https://inematds.github.io/explicavideos/guia/).
+[Assistir ao vídeo explicativo com o Nei (10 min)](https://inematds.github.io/iacultivada/videos/). Ilustrações, capítulos e legendas. Produzido com [Explicavideos](https://inematds.github.io/explicavideos/guia/).
