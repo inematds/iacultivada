@@ -1,0 +1,1337 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:01.380
+Do you use AI every day,
+
+2
+00:00:01.380 --> 00:00:03.460
+and it keeps making the same mistake?
+
+3
+00:00:03.460 --> 00:00:04.760
+You explain again,
+
+4
+00:00:04.760 --> 00:00:05.840
+correct it again,
+
+5
+00:00:05.840 --> 00:00:08.300
+and next week it's all the same.
+
+6
+00:00:08.300 --> 00:00:10.020
+Hi, I'm Nei Maldaner,
+
+7
+00:00:10.020 --> 00:00:11.380
+and in this video I want to
+
+8
+00:00:11.380 --> 00:00:13.540
+show you why this happens.
+
+9
+00:00:13.540 --> 00:00:15.700
+The problem is almost never the model.
+
+10
+00:00:15.700 --> 00:00:18.140
+It's what surrounds it.
+
+11
+00:00:18.140 --> 00:00:19.880
+Let's talk about
+
+12
+00:00:19.880 --> 00:00:21.620
+IA Cultivada,
+
+13
+00:00:21.620 --> 00:00:22.680
+cultivated AI.
+
+14
+00:00:22.680 --> 00:00:23.920
+It's not a product,
+
+15
+00:00:23.920 --> 00:00:25.340
+and it's not a new model.
+
+16
+00:00:25.340 --> 00:00:27.100
+It's a way to build AI systems
+
+17
+00:00:27.100 --> 00:00:30.240
+whose behavior improves through cycles:
+
+18
+00:00:30.240 --> 00:00:32.880
+execute, evaluate, give feedback,
+
+19
+00:00:32.880 --> 00:00:35.280
+adjust, and execute again.
+
+20
+00:00:35.280 --> 00:00:36.300
+By the end,
+
+21
+00:00:36.300 --> 00:00:38.360
+you'll know what level the AI you
+
+22
+00:00:38.360 --> 00:00:40.000
+use today is at.
+
+23
+00:00:40.000 --> 00:00:42.400
+Think of traditional software as building a
+
+24
+00:00:42.400 --> 00:00:43.040
+house.
+
+25
+00:00:43.040 --> 00:00:44.560
+Foundation, walls, roof,
+
+26
+00:00:44.560 --> 00:00:45.380
+finishing touches.
+
+27
+00:00:45.380 --> 00:00:46.740
+You define the structure,
+
+28
+00:00:46.740 --> 00:00:48.960
+the rules, and the expected result upfront,
+
+29
+00:00:48.960 --> 00:00:51.760
+and you get exactly what was specified.
+
+30
+00:00:51.760 --> 00:00:52.860
+When it fails,
+
+31
+00:00:52.860 --> 00:00:54.380
+it's a bug on one line.
+
+32
+00:00:54.380 --> 00:00:55.880
+Now think about a garden.
+
+33
+00:00:55.880 --> 00:00:57.140
+You don't draw every leaf.
+
+34
+00:00:57.140 --> 00:00:58.440
+You choose the seed,
+
+35
+00:00:58.440 --> 00:00:59.680
+prepare the soil,
+
+36
+00:00:59.680 --> 00:01:00.800
+provide water and light,
+
+37
+00:01:00.800 --> 00:01:02.820
+and what grows is the result of
+
+38
+00:01:02.820 --> 00:01:04.220
+the conditions you created.
+
+39
+00:01:04.220 --> 00:01:05.620
+That's how AI works.
+
+40
+00:01:05.620 --> 00:01:07.580
+Nobody wrote a model's ability to plan
+
+41
+00:01:07.580 --> 00:01:08.880
+or code, line by line.
+
+42
+00:01:08.880 --> 00:01:10.380
+The labs created the conditions,
+
+43
+00:01:10.380 --> 00:01:13.260
+and the ability emerged.
+
+44
+00:01:13.940 --> 00:01:16.760
+Before, we programmed behavior.
+
+45
+00:01:16.940 --> 00:01:19.680
+Now, we program the process that produces
+
+46
+00:01:19.680 --> 00:01:20.660
+behavior.
+
+47
+00:01:20.660 --> 00:01:22.740
+Let's name each part.
+
+48
+00:01:23.000 --> 00:01:24.660
+The seed is the AI model.
+
+49
+00:01:24.660 --> 00:01:26.700
+The soil is the context.
+
+50
+00:01:26.700 --> 00:01:28.920
+The environment is the system where the
+
+51
+00:01:28.920 --> 00:01:30.300
+agent works.
+
+52
+00:01:30.300 --> 00:01:32.240
+Water and light are the examples,
+
+53
+00:01:32.240 --> 00:01:33.620
+rules, and tools.
+
+54
+00:01:33.620 --> 00:01:35.240
+Pruning means corrections.
+
+55
+00:01:35.240 --> 00:01:37.400
+Observation means evaluation.
+
+56
+00:01:37.660 --> 00:01:39.300
+Fertilizer is feedback.
+
+57
+00:01:39.300 --> 00:01:41.760
+And each harvest is a new version
+
+58
+00:01:41.760 --> 00:01:42.640
+of the agent.
+
+59
+00:01:42.640 --> 00:01:44.320
+Now pay attention to the point almost
+
+60
+00:01:44.320 --> 00:01:45.760
+everyone gets wrong.
+
+61
+00:01:45.760 --> 00:01:47.260
+The right idea isn't:
+
+62
+00:01:47.260 --> 00:01:49.140
+I plant an AI and wait for
+
+63
+00:01:49.140 --> 00:01:49.900
+it to grow.
+
+64
+00:01:49.900 --> 00:01:51.660
+It's: I prepare the environment,
+
+65
+00:01:51.660 --> 00:01:52.820
+put the AI to work,
+
+66
+00:01:52.820 --> 00:01:54.240
+observe its behavior,
+
+67
+00:01:54.240 --> 00:01:55.380
+evaluate the result,
+
+68
+00:01:55.380 --> 00:01:56.900
+and adjust the system.
+
+69
+00:01:56.900 --> 00:01:58.840
+I plant, observe,
+
+70
+00:01:58.840 --> 00:01:59.980
+evaluate,
+
+71
+00:01:59.980 --> 00:02:01.260
+adjust the environment,
+
+72
+00:02:01.260 --> 00:02:02.940
+and grow it again.
+
+73
+00:02:02.940 --> 00:02:05.260
+Don't take the lazy interpretation.
+
+74
+00:02:05.360 --> 00:02:06.260
+IA
+
+75
+00:02:06.260 --> 00:02:09.240
+Cultivada doesn't mean less structural work.
+
+76
+00:02:09.240 --> 00:02:11.800
+It means a different kind of structure.
+
+77
+00:02:11.800 --> 00:02:12.760
+With a house,
+
+78
+00:02:12.760 --> 00:02:14.980
+almost all the work happens before construction
+
+79
+00:02:14.980 --> 00:02:15.960
+is finished.
+
+80
+00:02:15.960 --> 00:02:17.140
+In a garden,
+
+81
+00:02:17.140 --> 00:02:19.720
+an important part happens after the agent
+
+82
+00:02:19.720 --> 00:02:20.860
+starts operating.
+
+83
+00:02:20.860 --> 00:02:22.760
+The cycle goes like this:
+
+84
+00:02:22.760 --> 00:02:24.520
+use it, observe,
+
+85
+00:02:24.520 --> 00:02:26.420
+record failures, evaluate,
+
+86
+00:02:26.420 --> 00:02:29.740
+correct, and only then increase autonomy.
+
+87
+00:02:30.280 --> 00:02:31.480
+And there's more:
+
+88
+00:02:31.480 --> 00:02:33.460
+a plant grows on its own;
+
+89
+00:02:33.460 --> 00:02:34.940
+an agent doesn't.
+
+90
+00:02:34.940 --> 00:02:36.780
+Without evaluation and feedback,
+
+91
+00:02:36.780 --> 00:02:37.980
+it
+
+92
+00:02:38.140 --> 00:02:39.680
+repeats the same mistake forever,
+
+93
+00:02:39.680 --> 00:02:41.240
+with the same confidence.
+
+94
+00:02:41.240 --> 00:02:43.140
+It can even deliver a polished result
+
+95
+00:02:43.140 --> 00:02:43.900
+that's wrong.
+
+96
+00:02:43.900 --> 00:02:45.100
+That's
+
+97
+00:02:45.140 --> 00:02:46.760
+exactly why evaluation
+
+98
+00:02:46.760 --> 00:02:47.640
+exists.
+
+99
+00:02:47.640 --> 00:02:49.120
+Another important point.
+
+100
+00:02:49.120 --> 00:02:50.420
+While you're using it,
+
+101
+00:02:50.420 --> 00:02:52.520
+the model usually isn't changing its own
+
+102
+00:02:52.520 --> 00:02:53.360
+weights.
+
+103
+00:02:53.360 --> 00:02:54.740
+It arrives ready,
+
+104
+00:02:54.740 --> 00:02:55.640
+frozen.
+
+105
+00:02:55.640 --> 00:02:58.220
+So when someone says the agent got
+
+106
+00:02:58.220 --> 00:03:00.740
+better, something else changed.
+
+107
+00:03:01.160 --> 00:03:02.820
+The context changed.
+
+108
+00:03:02.820 --> 00:03:03.620
+The memory.
+
+109
+00:03:03.620 --> 00:03:04.320
+The rules.
+
+110
+00:03:04.320 --> 00:03:05.160
+The examples.
+
+111
+00:03:05.160 --> 00:03:07.320
+The tools, prompts,
+
+112
+00:03:07.940 --> 00:03:09.360
+skills, architecture,
+
+113
+00:03:09.360 --> 00:03:12.320
+processes, and evaluation criteria.
+
+114
+00:03:12.320 --> 00:03:13.440
+In other words,
+
+115
+00:03:13.440 --> 00:03:15.540
+often what improves isn't the seed.
+
+116
+00:03:15.540 --> 00:03:16.920
+It's the garden.
+
+117
+00:03:16.920 --> 00:03:18.240
+And that's great news.
+
+118
+00:03:18.240 --> 00:03:19.720
+Because the model is the same one
+
+119
+00:03:19.720 --> 00:03:20.960
+your competitor has.
+
+120
+00:03:20.960 --> 00:03:22.600
+The garden isn't.
+
+121
+00:03:22.600 --> 00:03:24.040
+The garden is yours,
+
+122
+00:03:24.040 --> 00:03:26.200
+and it's made of files you write
+
+123
+00:03:26.200 --> 00:03:27.320
+and review.
+
+124
+00:03:27.320 --> 00:03:29.160
+There are two levels of cultivation,
+
+125
+00:03:29.160 --> 00:03:30.800
+and many people mix them up.
+
+126
+00:03:30.800 --> 00:03:32.000
+At the first level,
+
+127
+00:03:32.000 --> 00:03:33.480
+the lab cultivates the model:
+
+128
+00:03:33.480 --> 00:03:34.580
+architecture,
+
+129
+00:03:34.580 --> 00:03:36.540
+data, objectives,
+
+130
+00:03:36.540 --> 00:03:38.080
+computing power, training,
+
+131
+00:03:38.080 --> 00:03:39.200
+and feedback.
+
+132
+00:03:39.200 --> 00:03:40.880
+This happens at Anthropic,
+
+133
+00:03:40.880 --> 00:03:42.680
+OpenAI, and Google.
+
+134
+00:03:42.680 --> 00:03:43.740
+It costs billions,
+
+135
+00:03:43.740 --> 00:03:45.200
+and you don't take part.
+
+136
+00:03:45.200 --> 00:03:46.340
+At the second level,
+
+137
+00:03:46.340 --> 00:03:47.700
+you cultivate the agent:
+
+138
+00:03:47.700 --> 00:03:49.620
+its role, context,
+
+139
+00:03:49.620 --> 00:03:51.520
+tools, rules, examples,
+
+140
+00:03:51.520 --> 00:03:53.820
+memory, evaluation, and feedback.
+
+141
+00:03:53.820 --> 00:03:55.300
+The model arrives ready.
+
+142
+00:03:55.300 --> 00:03:57.280
+What you cultivate is the envelope around
+
+143
+00:03:57.280 --> 00:03:57.540
+it.
+
+144
+00:03:57.540 --> 00:03:59.940
+And that envelope is what turns the
+
+145
+00:03:59.940 --> 00:04:02.320
+same model into either a confused intern
+
+146
+00:04:02.320 --> 00:04:04.620
+or a reliable professional.
+
+147
+00:04:04.780 --> 00:04:07.620
+Every agent is cultivated using the same
+
+148
+00:04:07.620 --> 00:04:09.040
+eight elements.
+
+149
+00:04:09.050 --> 00:04:10.400
+One: role.
+
+150
+00:04:10.400 --> 00:04:12.520
+What is it responsible for?
+
+151
+00:04:12.520 --> 00:04:14.700
+One clearly defined thing.
+
+152
+00:04:14.700 --> 00:04:16.100
+Two: context.
+
+153
+00:04:16.100 --> 00:04:18.020
+What does it need to know?
+
+154
+00:04:18.020 --> 00:04:20.050
+One good page is worth more than
+
+155
+00:04:20.050 --> 00:04:21.460
+twenty dumped on it.
+
+156
+00:04:21.460 --> 00:04:22.900
+Three: tools.
+
+157
+00:04:22.900 --> 00:04:24.960
+What can it operate?
+
+158
+00:04:24.980 --> 00:04:25.960
+Four:
+
+159
+00:04:25.960 --> 00:04:27.540
+rules and limits.
+
+160
+00:04:27.540 --> 00:04:28.900
+What does it do on its own,
+
+161
+00:04:28.900 --> 00:04:30.860
+what does it ask you to confirm,
+
+162
+00:04:30.860 --> 00:04:32.680
+and what does it never do?
+
+163
+00:04:32.680 --> 00:04:35.500
+These four make the agent work.
+
+164
+00:04:35.620 --> 00:04:38.240
+The next four make it improve.
+
+165
+00:04:38.240 --> 00:04:39.720
+Five: examples.
+
+166
+00:04:39.720 --> 00:04:41.060
+Six: memory.
+
+167
+00:04:41.060 --> 00:04:42.540
+Seven: evaluation.
+
+168
+00:04:42.540 --> 00:04:43.520
+Is it good,
+
+169
+00:04:43.520 --> 00:04:44.840
+compared to what?
+
+170
+00:04:44.840 --> 00:04:46.440
+And eight: feedback,
+
+171
+00:04:46.440 --> 00:04:48.780
+which turns every failure into a change
+
+172
+00:04:48.780 --> 00:04:49.800
+in the environment.
+
+173
+00:04:49.800 --> 00:04:52.180
+Most people stop at number four and
+
+174
+00:04:52.180 --> 00:04:54.269
+complain that AI doesn't learn.
+
+175
+00:04:55.160 --> 00:04:57.000
+IA Cultivada isn't
+
+176
+00:04:57.000 --> 00:04:58.920
+an official product category.
+
+177
+00:04:59.080 --> 00:05:00.380
+The same Claude,
+
+178
+00:05:00.380 --> 00:05:02.740
+Codex, or Gemini can work in a
+
+179
+00:05:02.740 --> 00:05:05.140
+traditional way or a cultivated way.
+
+180
+00:05:05.140 --> 00:05:06.640
+It depends on what you build around
+
+181
+00:05:06.640 --> 00:05:07.120
+it.
+
+182
+00:05:07.120 --> 00:05:09.700
+Looking at systems in September 2026:
+
+183
+00:05:09.720 --> 00:05:12.220
+Codex with agents and evaluations,
+
+184
+00:05:12.220 --> 00:05:14.480
+Gemini's agent platform with long-term memory,
+
+185
+00:05:14.480 --> 00:05:16.620
+and LangGraph with a human in the
+
+186
+00:05:16.620 --> 00:05:18.770
+loop are cultivated from the start.
+
+187
+00:05:18.770 --> 00:05:20.450
+Claude Code and
+
+188
+00:05:20.450 --> 00:05:23.600
+n8n with agents can become cultivated if
+
+189
+00:05:23.600 --> 00:05:25.600
+you build an evaluation cycle.
+
+190
+00:05:25.820 --> 00:05:29.020
+ChatGPT and Gemini with memory are partially
+
+191
+00:05:29.020 --> 00:05:29.760
+cultivated.
+
+192
+00:05:29.760 --> 00:05:31.090
+And API
+
+193
+00:05:31.090 --> 00:05:32.500
+prompt-and-response, simple RAG,
+
+194
+00:05:32.500 --> 00:05:34.640
+or a fixed workflow aren't
+
+195
+00:05:34.640 --> 00:05:35.380
+cultivated.
+
+196
+00:05:35.380 --> 00:05:37.280
+Here's a common point of confusion.
+
+197
+00:05:37.280 --> 00:05:40.200
+Memory alone doesn't make an AI cultivated.
+
+198
+00:05:40.200 --> 00:05:41.620
+Here's the difference.
+
+199
+00:05:41.620 --> 00:05:44.160
+First case: the agent talks with you
+
+200
+00:05:44.160 --> 00:05:46.480
+and saves that you prefer short answers.
+
+201
+00:05:46.480 --> 00:05:48.020
+That's personalization.
+
+202
+00:05:48.020 --> 00:05:50.040
+It's useful, but it doesn't improve the
+
+203
+00:05:50.040 --> 00:05:50.840
+process.
+
+204
+00:05:50.840 --> 00:05:53.320
+Second case: the agent performs a task
+
+205
+00:05:53.320 --> 00:05:54.240
+and fails.
+
+206
+00:05:54.240 --> 00:05:56.120
+The system measures the failure,
+
+207
+00:05:56.120 --> 00:05:57.160
+identifies
+
+208
+00:05:57.160 --> 00:05:59.560
+the cause, changes the context,
+
+209
+00:05:59.560 --> 00:06:00.900
+skill, or rule,
+
+210
+00:06:00.900 --> 00:06:03.360
+tests again, compares the result,
+
+211
+00:06:03.360 --> 00:06:05.220
+and only then keeps the improvement.
+
+212
+00:06:05.220 --> 00:06:06.360
+That's cultivation.
+
+213
+00:06:06.360 --> 00:06:08.400
+The difference is that in the second
+
+214
+00:06:08.400 --> 00:06:10.680
+case, there's evaluation and comparison,
+
+215
+00:06:10.680 --> 00:06:13.040
+and the correction goes into the environment
+
+216
+00:06:13.040 --> 00:06:15.720
+instead of getting lost in the conversation.
+
+217
+00:06:15.720 --> 00:06:17.460
+Let's look at Claude Code as an
+
+218
+00:06:17.460 --> 00:06:17.960
+example.
+
+219
+00:06:17.960 --> 00:06:19.160
+It has the pieces:
+
+220
+00:06:19.160 --> 00:06:21.360
+subagents, hooks, MCP,
+
+221
+00:06:21.360 --> 00:06:23.980
+tools, context, and automation.
+
+222
+00:06:23.980 --> 00:06:26.040
+But having the pieces isn't the same
+
+223
+00:06:26.040 --> 00:06:27.500
+as having the cycle.
+
+224
+00:06:27.500 --> 00:06:28.780
+If the workflow is:
+
+225
+00:06:28.780 --> 00:06:30.160
+create a landing page,
+
+226
+00:06:30.160 --> 00:06:32.200
+it delivers, and that's it,
+
+227
+00:06:32.200 --> 00:06:33.460
+that's execution.
+
+228
+00:06:33.460 --> 00:06:35.620
+Now, if the workflow is:
+
+229
+00:06:35.620 --> 00:06:37.120
+Claude creates it,
+
+230
+00:06:37.120 --> 00:06:40.160
+tests run, another agent evaluates it,
+
+231
+00:06:40.160 --> 00:06:41.640
+errors are recorded,
+
+232
+00:06:41.640 --> 00:06:43.060
+Claude gets the feedback,
+
+233
+00:06:43.060 --> 00:06:45.100
+corrects it, tests again,
+
+234
+00:06:45.100 --> 00:06:47.769
+and approved work goes into CLAUDE dot
+
+235
+00:06:47.769 --> 00:06:48.820
+M D, a skill,
+
+236
+00:06:48.820 --> 00:06:51.320
+or memory, then you have cultivation.
+
+237
+00:06:51.320 --> 00:06:52.840
+The tool is the same.
+
+238
+00:06:52.840 --> 00:06:55.320
+What changed is the system you built
+
+239
+00:06:55.320 --> 00:06:56.120
+around it.
+
+240
+00:06:56.120 --> 00:06:58.360
+For teaching and figuring out where you
+
+241
+00:06:58.360 --> 00:07:00.060
+are, use four levels.
+
+242
+00:07:00.060 --> 00:07:02.480
+Level one: executor AI.
+
+243
+00:07:02.480 --> 00:07:04.460
+Prompt, response, done.
+
+244
+00:07:04.460 --> 00:07:06.640
+No memory, no evaluation.
+
+245
+00:07:06.640 --> 00:07:09.160
+Level two: contextual AI.
+
+246
+00:07:09.160 --> 00:07:11.320
+Prompt, context or memory,
+
+247
+00:07:11.320 --> 00:07:12.140
+response.
+
+248
+00:07:12.140 --> 00:07:14.760
+It personalizes, but it still doesn't have
+
+249
+00:07:14.760 --> 00:07:16.300
+an improvement cycle.
+
+250
+00:07:16.300 --> 00:07:17.980
+Level three: agent.
+
+251
+00:07:17.980 --> 00:07:19.120
+It gets a goal,
+
+252
+00:07:19.120 --> 00:07:20.660
+reasons, uses tools,
+
+253
+00:07:20.660 --> 00:07:21.960
+and takes action.
+
+254
+00:07:21.960 --> 00:07:24.260
+For example, it changes the repository,
+
+255
+00:07:24.260 --> 00:07:25.180
+runs the terminal,
+
+256
+00:07:25.180 --> 00:07:26.960
+and runs tests.
+
+257
+00:07:27.200 --> 00:07:30.520
+It's autonomous, but it can repeat the
+
+258
+00:07:30.520 --> 00:07:32.820
+same mistake a thousand times.
+
+259
+00:07:32.820 --> 00:07:34.020
+Level
+
+260
+00:07:34.233 --> 00:07:37.060
+four: IA Cultivada.
+
+261
+00:07:37.260 --> 00:07:38.820
+Goal, execution,
+
+262
+00:07:38.820 --> 00:07:40.680
+result, evaluation,
+
+263
+00:07:40.680 --> 00:07:43.620
+feedback, and what it learned becomes memory,
+
+264
+00:07:43.620 --> 00:07:44.980
+a skill, context,
+
+265
+00:07:44.980 --> 00:07:47.660
+or a rule before the next run.
+
+266
+00:07:47.660 --> 00:07:50.180
+This is the most important distinction in
+
+267
+00:07:50.180 --> 00:07:50.760
+the video.
+
+268
+00:07:50.760 --> 00:07:52.860
+An agent isn't automatically
+
+269
+00:07:52.860 --> 00:07:54.180
+IA Cultivada.
+
+270
+00:07:54.180 --> 00:07:56.520
+An agent can work nonstop and repeat
+
+271
+00:07:56.520 --> 00:07:58.580
+the same mistake thousands of times,
+
+272
+00:07:58.580 --> 00:08:00.060
+always with the same confidence.
+
+273
+00:08:00.060 --> 00:08:03.100
+The leap happens when you add memory,
+
+274
+00:08:03.100 --> 00:08:04.300
+evaluation,
+
+275
+00:08:04.900 --> 00:08:05.860
+feedback,
+
+276
+00:08:05.860 --> 00:08:07.060
+observability,
+
+277
+00:08:07.180 --> 00:08:09.800
+clear criteria, correction mechanisms,
+
+278
+00:08:09.800 --> 00:08:10.840
+and
+
+279
+00:08:10.840 --> 00:08:12.900
+the ability to modify the environment.
+
+280
+00:08:12.900 --> 00:08:14.580
+Remember the formula:
+
+281
+00:08:15.180 --> 00:08:17.020
+execution, plus evaluation,
+
+282
+00:08:17.020 --> 00:08:21.200
+plus feedback, plus adaptation equals cultivation.
+
+283
+00:08:21.600 --> 00:08:23.360
+Remove any one of those parts,
+
+284
+00:08:23.360 --> 00:08:25.180
+and you're back to just an agent,
+
+285
+00:08:25.180 --> 00:08:27.400
+working hard and learning nothing.
+
+286
+00:08:27.400 --> 00:08:29.140
+What does this look like day to
+
+287
+00:08:29.140 --> 00:08:29.300
+day?
+
+288
+00:08:29.300 --> 00:08:30.480
+Three rules.
+
+289
+00:08:30.480 --> 00:08:33.300
+First: evaluation produces entries,
+
+290
+00:08:33.300 --> 00:08:35.000
+not impressions.
+
+291
+00:08:35.560 --> 00:08:37.940
+One line per failure in a log:
+
+292
+00:08:37.940 --> 00:08:39.580
+date, what broke,
+
+293
+00:08:39.580 --> 00:08:40.940
+the smallest possible correction,
+
+294
+00:08:40.940 --> 00:08:43.180
+and whether it was an instruction or
+
+295
+00:08:43.180 --> 00:08:44.420
+infrastructure problem.
+
+296
+00:08:44.420 --> 00:08:45.800
+After ten lines,
+
+297
+00:08:45.800 --> 00:08:47.260
+the pattern becomes clear.
+
+298
+00:08:47.260 --> 00:08:49.340
+Second: fix it in the file,
+
+299
+00:08:49.340 --> 00:08:51.160
+not the conversation.
+
+300
+00:08:51.540 --> 00:08:53.460
+If you've explained the same thing three
+
+301
+00:08:53.460 --> 00:08:55.780
+times, the model isn't being stubborn.
+
+302
+00:08:55.780 --> 00:08:57.520
+A rule is missing.
+
+303
+00:08:57.520 --> 00:08:58.440
+Third:
+
+304
+00:08:58.440 --> 00:09:00.960
+you earn autonomy through clean cycles.
+
+305
+00:09:00.960 --> 00:09:02.040
+At level one,
+
+306
+00:09:02.040 --> 00:09:04.020
+it proposes and you execute.
+
+307
+00:09:04.020 --> 00:09:05.060
+At level two,
+
+308
+00:09:05.060 --> 00:09:07.180
+it executes and
+
+309
+00:09:07.180 --> 00:09:07.900
+you review.
+
+310
+00:09:07.900 --> 00:09:09.020
+At level three,
+
+311
+00:09:09.020 --> 00:09:11.400
+it executes and reports back.
+
+312
+00:09:11.400 --> 00:09:13.680
+And you never start at level three.
+
+313
+00:09:13.680 --> 00:09:15.540
+Let's bring it all together.
+
+314
+00:09:16.330 --> 00:09:17.530
+IA
+
+315
+00:09:18.080 --> 00:09:19.720
+Cultivada isn't a new model.
+
+316
+00:09:19.720 --> 00:09:21.200
+It's a new way to build AI
+
+317
+00:09:21.200 --> 00:09:21.820
+systems.
+
+318
+00:09:21.820 --> 00:09:23.260
+The model is the seed.
+
+319
+00:09:23.260 --> 00:09:25.260
+The cultivation system surrounds it.
+
+320
+00:09:25.260 --> 00:09:27.460
+You create an environment where the agent
+
+321
+00:09:27.460 --> 00:09:29.140
+executes, is observed,
+
+322
+00:09:29.140 --> 00:09:31.180
+is evaluated, gets feedback,
+
+323
+00:09:31.180 --> 00:09:32.840
+has its environment adjusted,
+
+324
+00:09:32.840 --> 00:09:35.420
+runs again, and improves with each harvest.
+
+325
+00:09:35.420 --> 00:09:37.200
+The question stops being just:
+
+326
+00:09:37.200 --> 00:09:39.140
+how do we program behavior?
+
+327
+00:09:39.140 --> 00:09:41.300
+It becomes: how do we create the
+
+328
+00:09:41.300 --> 00:09:43.760
+conditions for behavior to improve?
+
+329
+00:09:44.180 --> 00:09:45.230
+At
+
+330
+00:09:45.230 --> 00:09:47.540
+IA Cultivada, at eventos dot inema dot
+
+331
+00:09:47.540 --> 00:09:49.520
+pro, you'll find the course,
+
+332
+00:09:49.520 --> 00:09:51.040
+the assessment, and the kit.
+
+333
+00:09:51.040 --> 00:09:52.780
+And there's much more at inema dot
+
+334
+00:09:52.780 --> 00:09:53.380
+club.

@@ -3,5 +3,15 @@
     "url": "https://github.com/inematds/iacultivada/releases/download/video-v2.0.0/iacultivada-pt.mp4",
     "srt": "https://github.com/inematds/iacultivada/releases/download/video-v2.0.0/iacultivada-pt.srt",
     "duration": 606.981333
+  },
+  "en": {
+    "url": "https://github.com/inematds/iacultivada/releases/download/video-v2.0.0/iacultivada-en.mp4",
+    "srt": "https://github.com/inematds/iacultivada/releases/download/video-v2.0.0/iacultivada-en.srt",
+    "duration": 593.541333
+  },
+  "es": {
+    "url": "https://github.com/inematds/iacultivada/releases/download/video-v2.0.0/iacultivada-es.mp4",
+    "srt": "https://github.com/inematds/iacultivada/releases/download/video-v2.0.0/iacultivada-es.srt",
+    "duration": 539.221333
   }
 }
